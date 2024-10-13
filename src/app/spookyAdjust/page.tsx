@@ -5,7 +5,7 @@ import clsx from "clsx";
 import links from "@/conf/links";
 import { title, subtitle } from "@/components/primitives";
 import { variable } from "@/components/font/fontProvider";
-import { CldUploadButton, CldImage, getCldImageUrl } from 'next-cloudinary';
+import { CldUploadButton, CldOgImage } from "next-cloudinary";
 import { Button, ButtonGroup, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, user } from "@nextui-org/react";
 import { IconCaretDown } from "@tabler/icons-react";
 export default function SpookyAdjust() {
