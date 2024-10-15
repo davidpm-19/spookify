@@ -22,12 +22,13 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
     <head />
     <body
       className={clsx(
-        "min-h-screen bg-background font-sans antialiased font-normal", variable.className
+        "min-h-screen bg-none font-sans antialiased font-normal", variable.className
       )}
     >
       <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-        <div className="relative flex flex-col h-screen">
-          <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+        <div className="relative flex flex-col h-screen items-center">
+        <div className="fixed w-screen z-[1] h-screen bg-[url('/dark-bg.png')] top-0 opacity-30 bg-[length:1950px_1080px] bg-center bg-no-repeat"></div>
+          <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow z-10">
             {children}
           </main>
         </div>

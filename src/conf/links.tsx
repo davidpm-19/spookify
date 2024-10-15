@@ -4,12 +4,9 @@ import {
     IconGhost,
     IconPumpkinScary,
     IconSkull,
-    IconCards
 } from "@tabler/icons-react";
 
 import { ThemeSwitch } from "@/components/theme-switch";
-
-
 const links = [
     {
         title: "Home",
@@ -19,25 +16,18 @@ const links = [
         href: "/",
     },
     {
-        title: "About",
-        icon: (
-            <IconInfoOctagon className="h-full w-full text-[#1C1C1C] dark:text-[#FFFAFA]" />
-        ),
-        href: "/about",
-    },
-    {
-        title: "Ghostify",
+        title: "Undead Me",
         icon: (
             <IconGhost className="h-full w-full text-[#1C1C1C] dark:text-[#FFFAFA]" />
         ),
-        href: "/ghostify",
+        href: "/undead",
     },
     {
-        title: "Nightmare Portal",
+        title: "Horror Lands",
         icon: (
             <IconSkull className="h-full w-full text-[#1C1C1C] dark:text-[#FFFAFA]" />
         ),
-        href: "/nportal",
+        href: "/horrorland",
     },
     {
         title: "Spookify",
@@ -47,19 +37,12 @@ const links = [
         href: "/spookyAdjust",
     },
     {
-        title: "Spookards",
-        icon: (
-            <IconCards className="h-full w-full text-[#1C1C1C] dark:text-[#FFFAFA]" />
-        ),
-        href: "/cardGenerator",
-    },
-    {
         title: "Change Theme",
         icon: (
             <ThemeSwitch className="h-full w-full text-[#1C1C1C] dark:text-[#FFFAFA]" />
         ),
         href: "#",
-    }
+    },
 ];
 
 export default links

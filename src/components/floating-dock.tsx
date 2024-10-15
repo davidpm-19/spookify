@@ -91,7 +91,6 @@ const FloatingDockMobile = ({
                 <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
             </button>
 
-            {/* Render the href="#" item with motion animation */}
             <AnimatePresence>
                 {open &&
                     items
@@ -142,12 +141,12 @@ const FloatingDockDesktop = ({
             onMouseMove={(e) => mouseX.set(e.pageX)}
             onMouseLeave={() => mouseX.set(Infinity)}
             className={cn(
-                "mx-auto hidden md:flex h-16 gap-4 items-end  rounded-2xl bg-[#f0f0f0]/60 dark:bg-[#292929]/30 px-4 pb-3",
+                "mx-auto hidden md:flex h-16 gap-4 items-end  rounded-2xl bg-[#f0f0f0]/60 dark:bg-[#292929]/60 backdrop-blur-sm px-4 pb-3",
                 className
             )}
         >
             {items.map((item) => (
-                <IconContainer mouseX={mouseX} key={item.title} {...item} />
+                <IconContainer mouseX={mouseX} key={item.title} {...item}/>
             ))}
         </motion.div>
     );
@@ -206,8 +205,18 @@ function IconContainer({
 
     const [hovered, setHovered] = useState(false);
 
+    
+  const playRandomSound = () => {
+    const soundFiles = ["/haunted_ambient.wav", "/horror_ambient.wav", "/piano_ambient.wav"];
+    const randomIndex = Math.floor(Math.random() * soundFiles.length);
+    const randomAudio = new Audio(soundFiles[randomIndex]);
+    randomAudio.volume = 1
+    randomAudio.loop
+    randomAudio.play();
+  };
+
     return (
-        <Link href={href}>
+        <Link href={href} className="clicker">
             <motion.div
                 ref={ref}
                 style={{ width, height }}
